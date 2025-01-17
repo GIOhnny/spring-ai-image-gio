@@ -1,6 +1,7 @@
 package ro.giohnny.springaiimage.services;
 
 
+import org.springframework.web.multipart.MultipartFile;
 import ro.giohnny.springaiimage.model.Question;
 
 
@@ -10,4 +11,6 @@ import ro.giohnny.springaiimage.model.Question;
 public interface OpenAIService {
 
     byte[] getImage(Question question);
+
+    String getDescription(MultipartFile file);
 }
