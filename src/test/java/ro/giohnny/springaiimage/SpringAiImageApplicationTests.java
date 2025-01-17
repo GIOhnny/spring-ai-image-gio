@@ -1,4 +1,4 @@
-package guru.springframework.springaiimage;
+package ro.giohnny.springaiimage;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
