@@ -2,6 +2,7 @@ package ro.giohnny.springaiimage.services;
 
 import org.springframework.ai.image.ImageModel;
 import org.springframework.ai.image.ImagePrompt;
+import org.springframework.ai.openai.OpenAiImageModel;
 import org.springframework.ai.openai.OpenAiImageOptions;
 import ro.giohnny.springaiimage.model.Question;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +17,7 @@ import java.util.Base64;
 @Service
 public class OpenAIServiceImpl implements OpenAIService {
 
-    private final ImageModel imageModel;
+    private final OpenAiImageModel imageModel;
 
     @Override
     public byte[] getImage(Question question) {
@@ -25,6 +26,8 @@ public class OpenAIServiceImpl implements OpenAIService {
                 .withResponseFormat("b64_json")
                 //.withModel("dall-e-2")
                 .withModel("dall-e-3")
+                .withQuality("hd") //default standard
+                .withStyle("natural") //default vivid
                 .build();
 
         ImagePrompt imagePrompt = new ImagePrompt(question.question(), options);
