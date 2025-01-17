@@ -23,6 +23,7 @@ public class OpenAIServiceImpl implements OpenAIService {
         var options = OpenAiImageOptions.builder()
                 .withHeight(1024).withWidth(1024)
                 .withResponseFormat("b64_json")
+                //.withModel("dall-e-2")
                 .withModel("dall-e-3")
                 .build();
 
